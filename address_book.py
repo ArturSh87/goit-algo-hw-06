@@ -44,6 +44,13 @@ class Record:
             raise ValueError("Contact not found")
         
         
+        Phone(new_number)
+        
+        
+        self.remove_phone(old_number)
+        self.add_phone(new_number)
+        
+        
     def find_phone(self, phone_number):
         for phone in self.phones:
             if phone.value == phone_number:
@@ -75,6 +82,8 @@ class AddressBook(UserDict):
             return("Address book is empty")
         return "\n".join(str(record) for record in self.data.values())
     
+
+
 # Створення нової адресної книги
 book = AddressBook()
 
@@ -107,5 +116,3 @@ print(f"{john.name}: {found_phone}")  # Виведення: John: 5555555555
 
 # Видалення запису Jane
 book.delete("Jane")
-
-
